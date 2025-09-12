@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Academic Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header - Clean academic style with name and nav on same row */
+        .site-header {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .header-left h1 {
+            font-size: 2.2rem;
+            font-weight: normal;
+            color: #333;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Navigation - Simple horizontal bar */
+        .site-nav {
+            display: none; /* Hide the separate nav bar */
+        }
+        
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-list li {
+            margin: 0;
+        }
+        
+        .nav-list a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: normal;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .nav-list a:hover {
+            border-bottom-color: #333;
+        }
+        
+        /* Main content */
+        .main-content {
+            padding: 40px 0;
+            min-height: 60vh;
+        }
+        
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-content h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 30px;
+            border-bottom: none;
+        }
+        
+        .page-content h2 {
+            font-size: 1.4rem;
+            font-weight: normal;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .page-content h3 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .page-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .page-content ul, .page-content ol {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .page-content li {
+            margin-bottom: 5px;
+        }
+        
+        /* Profile section */
+        .profile-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .profile-photo {
+            flex-shrink: 0;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 0;
+            object-fit: cover;
+            border: 3px solid #ddd;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Social links - minimal style */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            border-bottom-color: #333;
+        }
+        
+        /* Footer - minimal */
+        .site-footer {
+            background: #fff;
+            border-top: 1px solid #ddd;
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .site-footer p {
+            margin: 0;
+        }
+        
+        /* Publication styles - clean academic format */
+        .publication {
+            margin-bottom: 25px;
+            padding: 0;
+            background: none;
+            border: none;
+            border-left: none;
+        }
+        
+        .publication-title {
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .publication-authors {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .publication-venue {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .publication-links {
+            margin-top: 5px;
+        }
+        
+        .publication-links a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 0;
+            background: none;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .publication-links a:hover {
+            background: none;
+            border-bottom-color: #333;
+        }
+        
+        /* Research interests list */
+        .research-interests {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .research-interests li {
+            margin-bottom: 8px;
+            padding-left: 0;
+        }
+        
+        .research-interests li:before {
+            content: "• ";
+            color: #333;
+            font-weight: bold;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .header-right {
+                text-align: left;
+            }
+            
+            .nav-list {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .page-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        /* Home page specific styles */
+        .home-intro {
+            margin-bottom: 30px;
+        }
+        
+        .home-intro p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit;">{{ site.title | default: "Academic Website" }}</a></h1>
+                </div>
+                <div class="header-right">
+                    <ul class="nav-list">
+                        {% for item in site.navigation %}
+                        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="page-content">
+                {{ content }}
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title | default: "Academic Website" }}. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

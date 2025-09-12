@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<div class="home">
+    <!-- Profile Photo and Social Links -->
+    <div class="profile-section">
+        {% if site.photo %}
+        <div class="profile-photo">
+            <img src="{{ site.photo | relative_url }}" alt="{{ site.title }}" class="profile-image">
+        </div>
+        {% endif %}
+        
+        {% if site.social %}
+        <div class="social-links">
+            {% for social in site.social %}
+            <a href="{{ social.url }}" target="_blank" rel="noopener">
+                {% if social.icon contains 'ai-' %}
+                    <i class="{{ social.icon }}"></i>
+                {% else %}
+                    <i class="{{ social.icon }}"></i>
+                {% endif %}
+                {{ social.name }}
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="home-intro">
+        {{ content }}
+    </div>
+    
+    <!-- Research Interests -->
+    {% if site.academic.interests %}
+    <h2>Research Interests</h2>
+    <ul class="research-interests">
+        {% for interest in site.academic.interests %}
+        <li>{{ interest }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    <!-- Education -->
+    {% if site.academic.education %}
+    <h2>Education</h2>
+    <ul>
+        {% for edu in site.academic.education %}
+        <li><strong>{{ edu.degree }}</strong>, {{ edu.institution }}, {{ edu.year }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+  
+</div>

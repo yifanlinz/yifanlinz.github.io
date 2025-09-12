@@ -1,0 +1,109 @@
+/* Basic styles for the academic website */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-list a:hover {
+    color: #007acc;
+}
+
+/* Main content */
+.main-content {
+    padding: 40px 0;
+}
+
+/* Page styles */
+.page h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.page h2 {
+    color: #666;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.page p {
+    margin-bottom: 15px;
+}
+
+/* Coming soon styles */
+.coming-soon {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.coming-soon h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.coming-soon h2 {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.coming-soon p {
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.coming-soon a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007acc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.coming-soon a:hover {
+    background-color: #005a99;
+}

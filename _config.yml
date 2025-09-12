@@ -1,0 +1,75 @@
+# Site Settings
+title: "Yifan Lin"
+email: "yifanlin@uw.edu"
+photo: "assets/images/profile.jpg"  # Path to your profile photo
+description: "Master's Student in Biostatistics at University of Washington"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yifanlinz.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins: []
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Collections (currently not used - using regular pages instead)
+
+# Permalinks
+permalink: /:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: "pages"
+      type: "pages"
+    values:
+      layout: "default"
+
+# Social links
+social:
+  - name: "GitHub"
+    icon: "fab fa-github"
+    url: "https://github.com/yifanlinz"
+  - name: "LinkedIn"
+    icon: "fab fa-linkedin"
+    url: "https://www.linkedin.com/in/yifan-lin-82a051165/"
+  - name: "Email"
+    icon: "fas fa-envelope"
+    url: "yifanlin@uw.edu"
+
+# Navigation
+navigation:
+  - title: "About"
+    url: "/about/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "CV"
+    url: "/cv/"
+  - title: "Contact"
+    url: "/contact/"
+
+# Academic specific settings
+academic:
+  interests:
+    - "Biostatistics"
+    - "Statistical Methods"
+    - TODO
+  
+  education:
+    - degree: "M.S. in Biostatistics"
+      institution: "University of Washington"
+      year: "Expected 2026"
+    - degree: "B.S. in Bioinformatics"
+      institution: "UC San Diego"
+      year: "2022"
