@@ -11,12 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.3'
-    - name: Install dependencies
-      run: |
-        gem install bundler
-        bundle install
+        bundler-cache: true
     - name: Build site
       run: bundle exec jekyll build
+    - run: bundle exec rake
