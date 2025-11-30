@@ -18,4 +18,4 @@ Location: Seattle, WA
 
 *Last updated: December 2025*
 
-[Download PDF Version](assets/pdf/cv_yifan_lin.pdf)
+[View in Browser]({{ '/assets/pdf/CV_251129.pdf' | relative_url }}){:target="_blank"}
