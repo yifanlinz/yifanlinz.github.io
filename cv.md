@@ -16,6 +16,6 @@ Location: Seattle, WA
 
 ---
 
-*Last updated: January 2025*
+*Last updated: December 2025*
 
-[Download PDF Version](cv_yifan_lin.pdf)
+[Download PDF Version](assets/pdf/cv_yifan_lin.pdf)
