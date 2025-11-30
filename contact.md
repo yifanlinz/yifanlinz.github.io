@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
-published: false
+published: true
 ---
 
 # Contact
