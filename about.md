@@ -12,15 +12,9 @@ I am a Master student on the thesis track at UW Biostatistics.  Previously, I re
 
 ## Background
 
-My past experiences working with diverse biomedical datasets have revealed a growing disconnect between the rapid expansion of biomedical data and our ability to interpret it effectively. This realization has fueled my interest in bridging this gap through the development of specialized statistical methods tailored to biomedical big data. For my Master’s thesis, I developed a framework that integrates generative modeling, causal reasoning, and statistical rigor to explore latent confounding in complex biological systems. This work inspires my broader interests of leveraging AI-driven methods to describe, understand, and predict complex biological systems. These experiences have deepened my commitment to advancing data-driven biomedical research and strongly motivated my pursuit of PhD training.
+Through my work with biomedical big data in academia and industry, I have seen how modern assays reveal facets of biological systems previously inaccessible while introducing new analytical challenges. As an undergraduate researcher at UCSD, I worked with time-series omics datasets that captured rich transcriptional dynamics but required rigorous statistical correction and biological validation to disentangle signals from technical noises. Later in industry, I encountered a parallel issue: high-dimensional genomic variant data enabled strong predictive models but far outpaced the availability of reliable clinical labels, limiting biological interpretability. Across both settings, I observed a central challenge of modern biomedicine–our ability to measure biology is advancing faster than our ability to interpret it.
 
-## Research Philosophy
-
-I believe that the best research comes from asking the right questions and being willing to explore uncharted territories. My approach combines theoretical rigor with practical applications, always keeping in mind how research can benefit society.
-
-## Personal Interests
-
-I enjoy cooking, eating, and dancing in my free time. 
+Motivated by this gap, I pursued the Biostatistics Master’s program at UW to build a rigorous mathematical and statistical foundation for principled model development. Through my Master’s training, I learned to approach biomedical modeling through the lens of statistical inference and machine learning (ML) theory rather than black-box prediction alone. This shift reshaped how I design models and ultimately led me to develop *sensGAN*, a framework that integrates statistical sensitivity analysis with generative modeling to detect latent confounding in high-dimensional omics data. Building on this work, I now seek PhD training to deepen the theoretical and methodological basis of interpretable ML and to scale these ideas into a sustained research program. 
 
 ## Education
 
@@ -30,6 +24,6 @@ I enjoy cooking, eating, and dancing in my free time.
 - **B.S. in Bioinformatics** (2022)
   - University of California, San Diego
 
-## Awards and Recognition
+## Personal Interests
 
-TODO
+I enjoy cooking, eating, and dancing in my free time. 
